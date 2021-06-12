@@ -2,7 +2,7 @@
 Read the license at:
 https://github.com/IzunaDevs/nsfw_dl/blob/master/LICENSE
 """
-from nsfw_dl.bases import BaseSearchHTML
+from nsfw_dl.bases import BaseSearchXML
 
 
 class GelbooruRandom:
@@ -17,19 +17,16 @@ class GelbooruRandom:
 
     @staticmethod
     def get_image(data):
-        """ .... """
-        try:
-            return f'https:{data.find(id="image").get("src")}'
-        except AttributeError:
-            raise AttributeError(str(data))
+        """ ... """
+        return data.find(id="image").get("src")
 
 
-class GelbooruSearch(BaseSearchHTML):
+class GelbooruSearch(BaseSearchXML):
     """ Gets a random image with a specific tag from gelbooru. """
-    data_format = "bs4/html"
+    data_format = "bs4/xml"
 
     @staticmethod
     def prepare_url(args):
         """ .... """
-        return ("https://www.gelbooru.com/index.php"
-                f"?page=post&s=list&tags={args}", {}, {})
+        return ("https://www.gelbooru.com/"
+                f"index.php?page=dapi&s=post&q=index&{args}", {}, {})

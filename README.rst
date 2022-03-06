@@ -1,6 +1,8 @@
 nsfw\_dl
 --------
 
+closing this fork for a while, i'll reuse the code in some days for sure, but i'll revise in my way to learn, so... it's that
+
 .. image:: https://img.shields.io/pypi/v/nsfw-dl.svg
    :target: https://pypi.python.org/pypi/nsfw-dl/
 .. image:: https://img.shields.io/pypi/pyversions/nsfw-dl.svg
